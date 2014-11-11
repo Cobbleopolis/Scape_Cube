@@ -22,7 +22,6 @@ public class Model {
 	public float[] colors = {
 			1f, 0f, 0f, 1f,
 			0f, 1f, 0f, 1f,
-			0f, 1f, 0f, 1f,
 			0f, 0f, 1f, 1f,
 			1f, 1f, 1f, 1f
 	};
@@ -65,7 +64,7 @@ public class Model {
 		vbo_vertices_Id = GL15.glGenBuffers();
 		GL15.glBindBuffer(GL15.GL_ARRAY_BUFFER, vbo_vertices_Id);
 		GL15.glBufferData(GL15.GL_ARRAY_BUFFER, verticesBuffer, GL15.GL_STATIC_DRAW);
-		GL20.glVertexAttribPointer(0, 4, GL11.GL_FLOAT, false, 0, 0);
+		GL20.glVertexAttribPointer(0, 3, GL11.GL_FLOAT, false, 0, 0);
 		GL15.glBindBuffer(GL15.GL_ARRAY_BUFFER, 0);
 
 		System.out.println("Colors");
@@ -89,7 +88,6 @@ public class Model {
 	}
 
 	public void draw() {
-		GL11.glClear(GL11.GL_COLOR_BUFFER_BIT);
 
 		GL20.glUseProgram(pId);
 
